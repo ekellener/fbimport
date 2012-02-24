@@ -1,0 +1,6 @@
+{
+  'collectionName' : 'brands',
+  'findQuery' : {}
+  
+}
+

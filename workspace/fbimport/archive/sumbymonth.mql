@@ -1,0 +1,16 @@
+db.brand_trends.group( 
+{
+$keyf : function(doc) { return  {'name': doc.name, 'ts':  doc.ts.getMonth().toString().concat("-",doc.ts.getFullYear().toString())};  }, 
+cond: null, 
+reduce: function(obj,prev) 
+{ 
+prev.posts_sum += obj.posts_updated; 
+prev.comments_sum += obj.comments_updated; 
+}, 
+initial: { posts_sum: 0, comments_sum: 0 }
+ }
+
+);
+
+
+
